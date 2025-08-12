@@ -42,39 +42,22 @@ const user: Dipendente = {
 console.log(user);
 
 // snack 3 
-type Developer = {
+type Developer = Dipendente & {
   livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
-  linguaggi: ['Javascript', 'Typescript'] | [],
-  certificazioni: string[] | []
+  linguaggi?: string[],
+  certificazioni: string[]
 }
 
-type ProjectManager = {
+type ProjectManager = Dipendente & {
   teamSize: number | null,
-  budgetGestito: number | null,
-  stakeholderPrincipali: string[] | []
+  budgetGestito?: number,
+  stakeholderPrincipali: string[]
 }
 
 type Team = {
   nome: string,
   progettoAttuale: string | null,
   budget: number,
-  membri: ['Project Manager', ...Developer[]]
+  membri: [ProjectManager, Developer, ...Developer[]] //scrivere Developer, ha la stessa funzione di PM perchè così risulta sempre obbligatorio
 }
 
-const user2: Dipendente & Developer & ProjectManager = {
-  nome: 'Mario',
-  cognome: 'Rossi',
-  annoNascita: 1995,
-  sesso: 'm',
-  anniDiServizio: [2010, 2012, 2014],
-  emailAziendale: 'mariorossi@azienda.com',
-  contratto: 'freelance',
-  livelloEsperienza: 'Mid',
-  linguaggi: [],
-  certificazioni: ['CISCO'],
-  teamSize: null,
-  budgetGestito: 1000,
-  stakeholderPrincipali: ['BWM', 'Audi']
-}
-
-console.log(user2);
