@@ -52,3 +52,34 @@ const user: Dipendente = {
 }
 
 console.log(user);
+
+// snack 3 
+type Developer = {
+  livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
+  linguaggi: ['Javascript', 'Typescript'] | [],
+  certificazioni: string[] | []
+}
+
+type ProjectManager = {
+  teamSize: number | null,
+  budgetGestito: number | null,
+  stakeholderPrincipali: string[] | []
+}
+
+const user2: Dipendente & Developer & ProjectManager = {
+  nome: 'Mario',
+  cognome: 'Rossi',
+  annoNascita: 1995,
+  sesso: 'm',
+  anniDiServizio: [2010, 2012, 2014],
+  emailAziendale: 'mariorossi@azienda.com',
+  contratto: 'freelance',
+  livelloEsperienza: 'Mid',
+  linguaggi: [],
+  certificazioni: ['CISCO'],
+  teamSize: null,
+  budgetGestito: 1000,
+  stakeholderPrincipali: ['BWM', 'Audi']
+}
+
+console.log(user2);
