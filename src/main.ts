@@ -66,6 +66,13 @@ type ProjectManager = {
   stakeholderPrincipali: string[] | []
 }
 
+type Team = {
+  nome: string,
+  progettoAttuale: string | null,
+  budget: number,
+  membri: ['Project Manager', ...Developer[]]
+}
+
 const user2: Dipendente & Developer & ProjectManager = {
   nome: 'Mario',
   cognome: 'Rossi',
