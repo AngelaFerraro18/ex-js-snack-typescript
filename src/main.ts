@@ -1,3 +1,4 @@
+// snack 1 
 async function gestioneDati(datiRicevuti: unknown) {
   if (typeof datiRicevuti === 'string') {
     console.log(datiRicevuti.toUpperCase());
@@ -26,3 +27,24 @@ gestioneDati(null);
 gestioneDati([1, 2, 3, 4, 5]);
 gestioneDati(Promise.resolve('valore della Promise'));
 gestioneDati(undefined);
+
+
+// snack 2
+type Dipendente = {
+  nome: string,
+  cognome: string,
+  annoNascita: number,
+  sesso: 'm' | 'f',
+  anniDiServizio: number[]
+}
+
+
+const user: Dipendente = {
+  nome: 'Angela',
+  cognome: 'Ferraro',
+  annoNascita: 1994,
+  sesso: 'f',
+  anniDiServizio: [2025]
+}
+
+console.log(user);
