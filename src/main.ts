@@ -35,7 +35,9 @@ type Dipendente = {
   cognome: string,
   annoNascita: number,
   sesso: 'm' | 'f',
-  anniDiServizio: number[]
+  anniDiServizio: number[],
+  readonly emailAziendale: string,
+  contratto: 'indeterminato' | 'determinato' | 'freelance'
 }
 
 
@@ -44,7 +46,9 @@ const user: Dipendente = {
   cognome: 'Ferraro',
   annoNascita: 1994,
   sesso: 'f',
-  anniDiServizio: [2025]
+  anniDiServizio: [2025],
+  emailAziendale: 'azienda@azienda.com',
+  contratto: 'indeterminato'
 }
 
 console.log(user);
